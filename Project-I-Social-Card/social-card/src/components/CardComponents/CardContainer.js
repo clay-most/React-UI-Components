@@ -5,14 +5,11 @@ import CardBanner from "./CardBanner";
 import CardContent from "./CardContent";
 
 const CardContainer = () => {
-  let redirect = (url) => {
-    window.location.href = { url };
-  };
   return (
-    <div onClick={redirect}>
+    <a href="https://www.reactjs.org">
       <CardBanner />
       <CardContent />
-    </div>
+    </a>
   );
 };
 
