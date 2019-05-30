@@ -1,1 +1,14 @@
 /* All styles for your Card Components live here */
+#card{
+  padding: 15px;
+  padding-left: 65px;
+  padding-right: 0px;
+  display:flex;
+  justify-content: flex-end;
+  flex-flow: column;
+}
+
+#card img{
+  padding-top:8px;
+  padding-bottom:15px;
+}
