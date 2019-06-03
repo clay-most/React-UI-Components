@@ -1,39 +1,44 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
+import CalculatorDisplay from './components/DisplayComponents/CalculatorDisplay';
+import ButtonContainer from './components/ButtonComponents/ButtonContainer';
+import ActionButton from './components/ButtonComponents/ActionButton';
+import NumberButton from './components/ButtonComponents/NumberButton';
 
-import CalculatorDisplay from "./components/DisplayComponents/CalculatorDisplay";
-import ActionButton from "./components/ButtonComponents/ActionButton";
-import NumberButton from "./components/ButtonComponents/NumberButton";
-
-const App = () => {
-  return (
-    <div className="wrapper">
-      <CalculatorDisplay text="0" />
-      <div className="btns">
-        <div className="number">
-          <ActionButton buttonStyle="long" text="clear" />
-          <NumberButton buttonStyle="default" text="7" />
-          <NumberButton buttonStyle="default" text="8" />
-          <NumberButton buttonStyle="default" text="9" />
-          <NumberButton buttonStyle="default" text="4" />
-          <NumberButton buttonStyle="default" text="5" />
-          <NumberButton buttonStyle="default" text="6" />
-          <NumberButton buttonStyle="default" text="1" />
-          <NumberButton buttonStyle="default" text="2" />
-          <NumberButton buttonStyle="default" text="3" />
-          <ActionButton buttonStyle="long" text="0" />
-
-          <div className="operator">
-            <NumberButton buttonStyle="red" text="÷" />
-            <NumberButton buttonStyle="red" text="×" />
-            <NumberButton buttonStyle="red" text="-" />
-            <NumberButton buttonStyle="red" text="+" />
-            <NumberButton buttonStyle="red" text="=" />
-          </div>
-        </div>
+class App extends React.Component {
+  render() {
+    return (
+      <div className="calculator-wrapper">
+        <CalculatorDisplay />
+        <ButtonContainer className="clear-button">
+          <ActionButton className="long" text="clear" />
+          <NumberButton bgColor="red-button" text="/" />
+        </ButtonContainer>
+        <ButtonContainer>
+          <NumberButton bgColor="num-button" text="7" />
+          <NumberButton bgColor="num-button" text="8" />
+          <NumberButton bgColor="num-button" text="9" />
+          <NumberButton bgColor="red-button" text="X" />
+        </ButtonContainer>
+        <ButtonContainer>
+          <NumberButton bgColor="num-button" text="4" />
+          <NumberButton bgColor="num-button" text="5" />
+          <NumberButton bgColor="num-button" text="6" />
+          <NumberButton bgColor="red-button" text="-" />
+        </ButtonContainer>
+        <ButtonContainer>
+          <NumberButton bgColor="num-button" text="1" />
+          <NumberButton bgColor="num-button" text="2" />
+          <NumberButton bgColor="num-button" text="3" />
+          <NumberButton bgColor="red-button" text="+" />
+        </ButtonContainer>
+        <ButtonContainer>
+          <ActionButton className="long" text="0" />
+          <NumberButton bgColor="red-button" text="=" />
+        </ButtonContainer>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default App;
